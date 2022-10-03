@@ -1,7 +1,7 @@
 import React from 'react';
 import SectionTitle from "../../components/SectionTitle";
 
-const skills = ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5"]
+const skills = ["Skill1", "Skill2", "Skill3", "Skill4", "Skill5", "Skill6"]
 
 function About() {
     return (

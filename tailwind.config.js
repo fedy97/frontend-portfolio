@@ -7,6 +7,7 @@ module.exports = {
     screens: {
       'sm': {max: '1000px'},
       'lg': {max: '2023px'},
+      'nosm': {min: '1001px'}
     },
     extend: {
       colors: {
@@ -16,5 +17,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true }),
+  ],
 }
