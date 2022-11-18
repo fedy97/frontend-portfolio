@@ -14,14 +14,14 @@ function Contact() {
         <div>
             <SectionTitle title={"Contact Me!"}/>
             <div className={"flex flex-row items-center sm:flex-col"}>
-                <div className={"text-tertiary"}>
-                    <h1>{"{"}</h1>
+                <div className={""}>
+                    <h1 className={"text-white"}>{"{"}</h1>
                     {Object.keys(user).map((key) => (
-                        <h1 className={"ml-5"}>
+                        <h1 className={"ml-5 text-white"}>
                             {key} : {key === 'email' ? <a href={"mailto:" + user[key]}>{user[key]}</a> : user[key]}
                         </h1>
                     ))}
-                    <h1>{"}"}</h1>
+                    <h1 className={"text-white"}>{"}"}</h1>
                 </div>
                 <div className={"h-[70vh] nosm:w-2/3"}>
                     <a href={"mailto:" + user["email"]}>
