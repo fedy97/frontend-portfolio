@@ -20,3 +20,4 @@ jobs:
         REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
         REACT_APP_BASIC_USER: ${{ secrets.REACT_APP_BASIC_USER }}
         REACT_APP_BASIC_PASSWORD: ${{ secrets.REACT_APP_BASIC_PASSWORD }}
+        CI: false
