@@ -1,0 +1,1 @@
+module.exports = ["Java", "Spring Boot", "Node.js", "Git", "React", "Flutter"]
