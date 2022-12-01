@@ -16,7 +16,7 @@ function Intro() {
                 </a>}
             </div>
             {personalInfo?.photo && <div className={"flex sm:h-[50vh] sm:w-[40vh] h-[80vh]"}>
-                <img className={"rounded-3xl"} src={personalInfo.photo} alt="Profile Picture"/>
+                <img className={"rounded-3xl"} src={personalInfo.photo} alt="Profile"/>
             </div>}
         </div>
     );
