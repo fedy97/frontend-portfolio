@@ -23,8 +23,8 @@ const Home = () => {
 
     return (
         <div className={""}>
-            <Header/>
             {isLoading ? <Loader/> : <div className={"px-20 sm:px-5 bg-primary"}>
+                <Header/>
                 <Intro/>
                 <About/>
                 <Experiences/>
