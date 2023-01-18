@@ -30,7 +30,7 @@ jobs:
     - name: Building 🛠
       env:
         CI: false
-      run: npm build
+      run: npm run build
     - name: Copying build assets
       uses: garygrossgarten/github-action-scp@release
       with:
