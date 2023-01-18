@@ -6,16 +6,40 @@ on:
   pull_request:
     branches: [ master ]
 
+env:
+  REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+  PUBLIC_URL: ${{secrets.PUBLIC_URL}}
+  BROWSER: none
+
 jobs:
   build:
-
     runs-on: ubuntu-latest
-    
     steps:
-    - uses: actions/checkout@v2
-
-    - name: Deploy react app to github pages
-      uses: tanwanimohit/deploy-react-to-ghpages@v1.0.1
-      env: 
-        REACT_APP_BASE_URL: ${{ secrets.REACT_APP_BASE_URL }}
+    - uses: actions/checkout@v3
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16
+    - name: Installing dependencies 🏗
+      run: npm install
+    - name: Create env variables
+      run: |
+        echo "PUBLIC_URL=${{ env.PUBLIC_URL }}" >> .env
+        echo "REACT_APP_BASE_URL=${{ env.REACT_APP_BASE_URL }}" >> .env
+        echo "BROWSER=${{ env.BROWSER }}" >> .env
+    - name: Building 🛠
+      env:
         CI: false
+      run: npm build
+    - name: Copying build assets
+      uses: garygrossgarten/github-action-scp@release
+      with:
+        local: build
+        remote: /var/www/fedy97.ml
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        privateKey: ${{ secrets.SSH_KEY }}
+        rmRemote: true
+        atomicPut: true
+        dotfiles: true
+        verbose: true

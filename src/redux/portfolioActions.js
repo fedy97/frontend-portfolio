@@ -12,7 +12,7 @@ export const fetchData = () => {
         };
         try {
             const portfolioData = await fetchHandler();
-            console.log(portfolioData);
+            //console.log(portfolioData);
             dispatch(portfolioActions.replaceData(portfolioData));
             dispatch(portfolioActions.hideLoading());
         } catch (err) {

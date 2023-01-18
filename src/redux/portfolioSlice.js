@@ -3,6 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 const portfolioSlice = createSlice({
     name: "portfolio",
     initialState: {
+        isAdminPage: false,
         skillResponses: null,
         experienceResponses: null,
         projectResponses: null,
@@ -24,6 +25,9 @@ const portfolioSlice = createSlice({
         hideLoading: (state, action) => {
             state.loading = false;
         },
+        setIsAdminPage: (state, action) => {
+            state.isAdminPage = !state.isAdminPage;
+        }
     },
 });
 
